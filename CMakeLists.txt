@@ -5,6 +5,8 @@ add_executable(test ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp)
 target_link_libraries(test dlib::dlib)
 add_executable(dnn_mmod_ex ${CMAKE_CURRENT_SOURCE_DIR}/dnn_mmod_ex.cpp)
 target_link_libraries(dnn_mmod_ex dlib::dlib)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../libtorch)
 find_package(Torch REQUIRED)
 message(${TORCH_INCLUDE_DIRS})
